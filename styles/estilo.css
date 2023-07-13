@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+    color: rgb(247, 243, 243);
+}
+
+.container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(247, 243, 243);
+}
