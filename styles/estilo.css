@@ -9,3 +9,8 @@ body{
     flex-direction: column;
     color: rgb(247, 243, 243);
 }
+
+.resultado{
+    display: flex;
+    flex-direction: column;
+}
