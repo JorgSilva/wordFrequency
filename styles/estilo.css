@@ -1,16 +1,19 @@
 body{
-    background-color: black;
-    color: rgb(247, 243, 243);
+    background-color: rgb(245, 240, 240);
+   
 }
 
 .container{
     width: 400px;
     display: flex;
     flex-direction: column;
-    color: rgb(247, 243, 243);
+   
 }
 
-.resultado{
-    display: flex;
-    flex-direction: column;
+
+
+#resultTable, #tableBody{
+    width: 400px;
+    border-collapse: collapse;
 }
+

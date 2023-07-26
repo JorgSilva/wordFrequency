@@ -1,13 +1,10 @@
 const textSearch = document.getElementById("textoProcurar");
-const resultRank = document.getElementById("resultRank");
-const resultCount= document.getElementById("resultCount");
-const resultWord = document.getElementById("resultWord");
-const resultPercent = document.getElementById("resultPercent");
 const button = document.querySelector("button");
-
+let table = document.getElementById("tableBody");
 let words ='';
 let wordCount = '';
 let wordPercent = '';
+let count = 0;
 
 function pegaTexto(text){
     return text.replace(/\.|\,/g,'').split(' ');
@@ -37,21 +34,30 @@ function translate(text){
 
 function mostra(text){
     text.forEach((activity) => {
-  
-            console.log(activity[0]);
-            console.log(activity[1]);
-            console.log(activity[2]);
+        let row = document.createElement("tr");
+      
+        // Create cells
+        let c1 = document.createElement("td");
+        let c2 = document.createElement("td");
+        let c3 = document.createElement("td");
+        let c4 = document.createElement("td");
+        
+        // Insert data to cells
+        c1.innerText = count + 1;
+        c2.innerText = activity[0];
+        c3.innerText = activity[1];
+        c4.innerText = activity[2];
+        
+        // Append cells to row
+        row.appendChild(c1);
+        row.appendChild(c2);
+        row.appendChild(c3);
+        row.appendChild(c4);
+        
+        // Append row to table body
+        table.appendChild(row)
+        count++;
     });
-
-
-    // text.forEach((activity) => {
-    //     activity.forEach((data) => {
-    //         console.log(data);
-    //     });
-    // });
-    // resultWord.textContent = wordCount[0];
-      // resultCount.textContent = wordCount[1];
-      // resultWord.textContent = wordCount[2];
 }
 
 button.addEventListener("click", () => {
@@ -60,13 +66,6 @@ button.addEventListener("click", () => {
     wordPercent = translate(wordCount);
     mostra(wordPercent);
 
-
-    //console.table(wordPercent);
-    //console.log(wordPercent);
-    
-    
-    //result.textContent = ordenarTexto(words);
-    
 });
 
 
